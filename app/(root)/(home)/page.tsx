@@ -1,7 +1,11 @@
 import React from "react";
-
+import { UserButton } from "@clerk/nextjs";
 const Home = () => {
-  return <div className="h1-bold"></div>;
+  return (
+    <div>
+      <UserButton afterSwitchSessionUrl="/" />
+    </div>
+  );
 };
 
 export default Home;
