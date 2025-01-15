@@ -8,7 +8,7 @@ interface CustomInputProps {
   iconPosition: string;
   imgsrc: string;
   placeholder: string;
-  otherClasses: string;
+  otherClasses?: string;
 }
 
 const LocalSearchbar = ({
@@ -16,11 +16,11 @@ const LocalSearchbar = ({
   iconPosition,
   imgsrc,
   placeholder,
-  otherclasses,
+  otherClasses,
 }: CustomInputProps) => {
   return (
     <div
-      className={`background-light800_darkgradient flex min-h-[56px] grow items-center gap-4 rounded-[10px] px-4 ${otherclasses}`}
+      className={`background-light800_darkgradient flex min-h-[56px] grow items-center gap-4 rounded-[10px] px-4 ${otherClasses}`}
     >
       {iconPosition === "left" && (
         <Image

@@ -4,34 +4,34 @@ import React from "react";
 import RenderTag from "./RenderTag";
 
 const hotquestions = [
-  { _id: 1, title: "how do i use express as a custom server in next?" },
-  { _id: 2, title: "how do i take hints from next?" },
-  { _id: 3, title: "what is the syntax for play around role?" },
-  { _id: 4, title: "what to write before terminal end command?" },
+  { _id: "1", title: "how do i use express as a custom server in next?" },
+  { _id: "2", title: "how do i take hints from next?" },
+  { _id: "3", title: "what is the syntax for play around role?" },
+  { _id: "4", title: "what to write before terminal end command?" },
 ];
 const popularTags = [
   {
-    _id: 1,
+    _id: "1",
     name: "Javascript",
     totalQuestions: 5,
   },
   {
-    _id: 2,
+    _id: "2",
     name: "NextJs",
     totalQuestions: 7,
   },
   {
-    _id: 3,
+    _id: "3",
     name: "ReactJs",
     totalQuestions: 9,
   },
   {
-    _id: 4,
+    _id: "4",
     name: "MongoDb",
     totalQuestions: 13,
   },
   {
-    _id: 5,
+    _id: "5",
     name: "Redux",
     totalQuestions: 10,
   },
