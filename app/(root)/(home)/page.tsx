@@ -5,70 +5,13 @@ import NoResult from "@/components/shared/NoResult";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
+import { getQuestions } from "@/lib/actions/question.action";
 import Link from "next/link";
 import React from "react";
 
-const questions = [
-  {
-    _id: "1",
-    title: "Cascading deletes in SQLAlchemy?",
-    tags: [
-      { _id: "1", name: "Python" },
-      { _id: "2", name: "SQL" },
-    ],
-    author: {
-      _id: "101",
-      name: "Rit Narayan",
-      picture: "https://randomuser.me/api/portraits/men/1.jpg",
-    },
-    upvotes: 10,
-    views: 154549754,
-    answers: [
-      { _id: "1", content: "Answer 1" },
-      { _id: "2", content: "Answer 2" },
-    ],
-    createdAt: new Date("2025-01-13T12:00:00.000Z"),
-  },
-  {
-    _id: "2",
-    title: "How to center a div?",
-    tags: [
-      { _id: "3", name: "CSS" },
-      { _id: "4", name: "HTML" },
-    ],
-    author: {
-      _id: "102",
-      name: "Vanshaj",
-      picture: "https://randomuser.me/api/portraits/men/2.jpg",
-    },
-    upvotes: 12,
-    views: 101,
-    answers: [{ _id: "3", content: "Answer 1" }],
-    createdAt: new Date("2025-01-13T12:00:00.000Z"),
-  },
-  {
-    _id: "3",
-    title: "How do I use Express as a custom server in Next.js?",
-    tags: [
-      { _id: "5", name: "Next.js" },
-      { _id: "6", name: "Express" },
-    ],
-    author: {
-      _id: "101",
-      name: "Rit Narayan",
-      picture: "https://randomuser.me/api/portraits/men/1.jpg",
-    },
-    upvotes: 150000000,
-    views: 150,
-    answers: [
-      { _id: "4", content: "Answer 1" },
-      { _id: "5", content: "Answer 2" },
-    ],
-    createdAt: new Date("2025-01-13T12:00:00.000Z"),
-  },
-];
+export default async function Home() {
+  const result = await getQuestions({});
 
-const Home = () => {
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -97,8 +40,8 @@ const Home = () => {
       <HomeFilters />
       <div className="mt-10 flex w-full flex-col gap-6">
         {/* looping through questions  */}
-        {questions.length > 0 ? (
-          questions.map((question) => (
+        {result.questions.length > 0 ? (
+          result.questions.map((question) => (
             <QuestionCard
               key={question._id}
               _id={question._id}
@@ -124,6 +67,6 @@ const Home = () => {
       </div>
     </>
   );
-};
+}
 
-export default Home;
+// export default Home;
