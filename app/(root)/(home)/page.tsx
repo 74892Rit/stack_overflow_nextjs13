@@ -10,7 +10,7 @@ import Link from "next/link";
 import React from "react";
 
 export default async function Home() {
-  const result = await getQuestions({});
+  const result = await getQuestions();
 
   return (
     <>

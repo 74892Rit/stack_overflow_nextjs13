@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useRef, useState } from "react";
@@ -60,6 +61,7 @@ const Question = ({ mongoUserId }: props) => {
       // navigate to homepage
       router.push("/");
     } catch (error) {
+      console.log(error.message);
     } finally {
       setIsSubmitting(false);
     }

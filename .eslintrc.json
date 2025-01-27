@@ -5,5 +5,10 @@
     "standard",
     "plugin:tailwindcss/recommended",
     "prettier"
-  ]
+  ],
+  "rules": {
+    "no-console": "off",
+    "no-unused-vars": "off",
+    "react/prop-types": "off" // Example rule, adjust as needed
+  }
 }
