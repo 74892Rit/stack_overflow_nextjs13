@@ -22,7 +22,7 @@ export async function createUser(userData: CreateUserParams) {
   }
 }
 
-export async function upateUser(params: UpdateUserParams) {
+export async function updateUser(params: UpdateUserParams) {
   try {
     connectToDatabase();
 
@@ -70,6 +70,17 @@ export async function deleteUser(params: DeleteUserParams) {
   }
 }
 export const getUserById = async ({ userId }) => {
-  const user = await User.findById(userId);
-  return user;
+  try {
+    await connectToDatabase();
+
+    const user = await User.findById(userId);
+    if (!user) {
+      throw new Error("User not found");
+    }
+
+    return user;
+  } catch (error) {
+    console.error("Error fetching user by ID:", error);
+    throw new Error("Failed to fetch user");
+  }
 };
