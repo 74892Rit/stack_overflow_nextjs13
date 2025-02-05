@@ -77,7 +77,6 @@ export const getUserById = async ({ userId }) => {
     if (!user) {
       throw new Error("User not found");
     }
-
     return user;
   } catch (error) {
     console.error("Error fetching user by ID:", error);
