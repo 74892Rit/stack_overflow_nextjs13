@@ -69,7 +69,7 @@ export async function deleteUser(params: DeleteUserParams) {
     throw error;
   }
 }
-export const getUserById = async ({ userId }) => {
+export const getUserById = async (userId: string) => {
   try {
     await connectToDatabase();
 
